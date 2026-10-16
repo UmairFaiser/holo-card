@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Holographic card</title>
+  <link rel="stylesheet" href="style.css?v=72f1e776">
+  <script src="script.js?v=b45288b7" defer></script>
+</head>
+<body>
+  <svg width="0" height="0" aria-hidden="true" class="card-outlines">
+    <defs>
+      <clipPath id="identity-outline" clipPathUnits="objectBoundingBox">
+        <path transform="scale(.003968254 .019230769)" d="M6 0H207C213 0 215 3 219 7C225 13 230 13 238 13H246Q252 13 252 20V46Q252 52 246 52H6Q0 52 0 46V6Q0 0 6 0Z"/>
+      </clipPath>
+      <clipPath id="caption-outline" clipPathUnits="objectBoundingBox">
+        <path transform="scale(.004651163 .03125)" d="M6 0H209Q215 0 215 6V17C215 25 209 32 201 32H6Q0 32 0 26V6Q0 0 6 0Z"/>
+      </clipPath>
+    </defs>
+  </svg>
+  <main class="stage">
+    <div class="interaction" tabindex="0" role="img" aria-label="Holographic trading card. Move your pointer or use arrow keys to tilt.">
+      <article class="card">
+        <div class="artwork">
+          <img class="portrait" draggable="false" src="portrait.svg" width="264" height="360" alt="Woman with pink and turquoise hair looking to the right.">
+          <div class="identity">
+            <strong>ANA HOWARD</strong>
+            <span>@AnaArsonist</span>
+          </div>
+          <div class="caption">
+            <span>Design Engineer</span><span>Aave</span>
+          </div>
+          <img class="badge badge-aave" src="aave.svg" draggable="false" alt="Aave logo">
+          <img class="badge badge-cat" src="cat.svg" draggable="false" alt="Purple cat sticker">
+          <canvas class="foil" aria-hidden="true"></canvas>
+        </div>
+      </article>
+    </div>
+  </main>
+</body>
+</html>

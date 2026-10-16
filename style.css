@@ -1,0 +1,143 @@
+:root {
+  color-scheme: dark;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #0b0b0b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.card-outlines {
+  position: absolute;
+}
+
+body {
+  margin: 0;
+}
+
+.stage {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding-bottom: 36px;
+  overflow: hidden;
+}
+
+.interaction {
+  width: min(288px, 74vw);
+  aspect-ratio: 3 / 4;
+  perspective: 600px;
+  outline: none;
+  touch-action: pan-y;
+}
+
+.interaction:focus-visible {
+  outline: 2px solid #a5dcef;
+  outline-offset: 16px;
+  border-radius: 5px;
+}
+
+.card {
+  --rx: 0deg;
+  --ry: 0deg;
+  --scale: 1;
+  width: 100%;
+  height: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  background: #fafafa;
+  box-shadow: 0 20px 32px -20px #000b, inset 0 0 0 1px #ddd;
+  transform: rotateX(var(--rx)) rotateY(var(--ry)) scale(var(--scale));
+}
+
+.artwork {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  isolation: isolate;
+  background: #c7e2ef;
+}
+
+.portrait {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.identity,
+.caption {
+  position: absolute;
+  left: 2.27%;
+  background: linear-gradient(110deg, #185785, #20558e);
+  color: #fff;
+  border-radius: 5px;
+}
+
+.identity {
+  bottom: 11.67%;
+  width: 95.45%;
+  height: 14.44%;
+  clip-path: url(#identity-outline);
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.identity strong {
+  font-size: 15.5px;
+  font-weight: 600;
+  letter-spacing: -.15px;
+}
+
+.identity span {
+  color: #9cc9e3;
+  font-size: 12px;
+}
+
+.caption {
+  bottom: 1.67%;
+  width: 81.44%;
+  height: 8.89%;
+  clip-path: url(#caption-outline);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 0 8px;
+  font-size: 12px;
+}
+
+.badge {
+  position: absolute;
+  height: auto;
+  pointer-events: none;
+}
+
+.badge-aave {
+  width: 12.5%;
+  right: 2.8%;
+  bottom: 25%;
+}
+
+.badge-cat {
+  width: 16.6667%;
+  right: 0;
+  bottom: 0;
+}
+
+.foil {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    transform: none;
+  }
+}
